@@ -15,7 +15,7 @@ const Cards = ({ home, setInputDiv, data, setUpdatedData, fetchTasks }) => {
   useEffect(() => {
     const fetchUsernames = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/v1/get-all-users', { headers });
+        const response = await axios.get('http://new-task-management-sys-production.up.railway.app/api/v1/get-all-users', { headers });
         const usernameMap = {};
         response.data.data.forEach(user => {
           usernameMap[user._id] = user.username;
@@ -36,7 +36,7 @@ const Cards = ({ home, setInputDiv, data, setUpdatedData, fetchTasks }) => {
     }
     try {
       await axios.put(
-        `http://localhost:3000/api/v2/update-complete-task/${id}`,
+        `http://new-task-management-sys-production.up.railway.app/api/v2/update-complete-task/${id}`,
         {},
         { headers }
       );
@@ -53,7 +53,7 @@ const Cards = ({ home, setInputDiv, data, setUpdatedData, fetchTasks }) => {
       return;
     }
     try {
-      await axios.delete(`http://localhost:3000/api/v2/delete-task/${id}`, {
+      await axios.delete(`http://new-task-management-sys-production.up.railway.app/api/v2/delete-task/${id}`, {
         headers,
       });
       alert("Task Deleted.");

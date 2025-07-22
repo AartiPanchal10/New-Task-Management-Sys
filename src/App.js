@@ -77,7 +77,7 @@ const App = () => {
 // Function to verify token with your backend
 const verifyToken = async (token) => {
   try {
-    const response = await fetch('http://localhost:3000/api/v1/verify-token', {
+    const response = await fetch('http://new-task-management-sys-production.up.railway.app/api/v1/verify-token', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

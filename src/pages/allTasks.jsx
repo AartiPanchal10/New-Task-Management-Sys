@@ -20,7 +20,7 @@ const AllTasks = () => {
   const fetchTasks = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:3000/api/v2/get-all-tasks", { headers });
+      const response = await axios.get("http://new-task-management-sys-production.up.railway.app/api/v2/get-all-tasks", { headers });
       const allTasks = response.data.allTasks || response.data.data;
       const userId = localStorage.getItem('id');
 

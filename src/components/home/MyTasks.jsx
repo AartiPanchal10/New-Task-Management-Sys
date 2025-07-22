@@ -15,7 +15,7 @@ const MyTasks = () => {
           'id': localStorage.getItem('id'),
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         };
-        const response = await axios.get("http://localhost:3000/api/v2/get-all-tasks", { headers });
+        const response = await axios.get("http://new-task-management-sys-production.up.railway.app/api/v2/get-all-tasks", { headers });
         const userId = localStorage.getItem('id');
 
         // Filter tasks that are assigned to the logged-in user

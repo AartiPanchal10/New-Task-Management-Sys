@@ -30,7 +30,7 @@ const InputData = ({ InputDiv, setInputDiv, updatedData, setUpdatedData, fetchTa
           id: localStorage.getItem("id"),
           authorization: `Bearer ${localStorage.getItem("token")}`,
         };
-        const response = await axios.get("http://localhost:3000/api/v1/get-all-users", { headers });
+        const response = await axios.get("http://new-task-management-sys-production.up.railway.app/api/v1/get-all-users", { headers });
         setUsers(response.data.data);
       } catch (error) {
         console.error("Error fetching users:", error);
@@ -62,7 +62,7 @@ const InputData = ({ InputDiv, setInputDiv, updatedData, setUpdatedData, fetchTa
       alert("All fields are required.");
     } else {
       try {
-        await axios.post("http://localhost:3000/api/v2/create-task", Data, { headers });
+        await axios.post("http://new-task-management-sys-production.up.railway.app/api/v2/create-task", Data, { headers });
         alert("Task Created.");
         setData({ title: "", description: "", assignedTo: "", dueDate: "" });
         setSelectedUser(null);
@@ -79,7 +79,7 @@ const InputData = ({ InputDiv, setInputDiv, updatedData, setUpdatedData, fetchTa
       alert("All fields are required.");
     } else {
       try {
-        await axios.put(`http://localhost:3000/api/v2/update-task/${updatedData.id}`, Data, { headers });
+        await axios.put(`http://new-task-management-sys-production.up.railway.app/api/v2/update-task/${updatedData.id}`, Data, { headers });
         alert("Task Updated.");
         setUpdatedData({ id: "", title: "", description: "", assignedTo: "", dueDate: "" });
         setData({ title: "", description: "", assignedTo: "", dueDate: "" });
