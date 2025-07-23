@@ -26,12 +26,12 @@ const LogIn = () => {
       if (Data.email === "" || Data.password === "") {
         alert("All fields are required");
       } else {
-        const response = await axios.post("http://new-task-management-sys-production.up.railway.app/api/v1/log-in", Data);
+        const response = await axios.post("https://new-task-management-sys-production.up.railway.app/api/v1/log-in", Data);
         setData({ email: "", password: "" });
         localStorage.setItem("id", response.data.id);
         localStorage.setItem("token", response.data.token);
 
-        const userResponse = await axios.get("http://new-task-management-sys-production.up.railway.app/api/v1/get-all-users", {
+        const userResponse = await axios.get("https://new-task-management-sys-production.up.railway.app/api/v1/get-all-users", {
           headers: {
             Authorization: `Bearer ${response.data.token}`
           }

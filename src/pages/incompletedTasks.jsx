@@ -15,7 +15,7 @@ const IncompletedTasks = () => {
   // Fetch incomplete tasks when the component mounts
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get("http://new-task-management-sys-production.up.railway.app/api/v2/get-incomplete-tasks", {
+      const response = await axios.get("https://new-task-management-sys-production.up.railway.app/api/v2/get-incomplete-tasks", {
         headers,
       });
       // Filter incomplete tasks based on the provided tasks context

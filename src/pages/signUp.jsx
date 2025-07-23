@@ -49,7 +49,7 @@ const SignUp = () => {
     const submit = async () => {
         try {
             if (validateForm()) {
-                const response = await axios.post("http://new-task-management-sys-production.up.railway.app/api/v1/sign-up", Data);
+                const response = await axios.post("https://new-task-management-sys-production.up.railway.app/api/v1/sign-up", Data);
                 setData({ username: "", email: "", password: "" });
                 alert(response.data.message);
                 navigate("/logIn");

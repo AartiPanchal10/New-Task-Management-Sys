@@ -15,7 +15,7 @@ const OtherUserTasks = () => {
           'id': localStorage.getItem('id'),
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         };
-        const response = await axios.get("http://new-task-management-sys-production.up.railway.app/api/v2/get-all-tasks", { headers });
+        const response = await axios.get("https://new-task-management-sys-production.up.railway.app/api/v2/get-all-tasks", { headers });
         const userId = localStorage.getItem('id');
         const assignedTasks = response.data.allTasks.filter(task => task.assignedBy === userId && task.assignedTo !== userId);
         setTasks(assignedTasks);

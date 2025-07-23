@@ -13,7 +13,7 @@ const CompletedTasks = () => {
   
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get("http://new-task-management-sys-production.up.railway.app/api/v2/get-complete-tasks", {
+      const response = await axios.get("https://new-task-management-sys-production.up.railway.app/api/v2/get-complete-tasks", {
         headers,
       });
       // Filter completed tasks based on the provided tasks context
